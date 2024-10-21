@@ -25,5 +25,8 @@
     "End"
   ],
   "author": "Oscar Vega V.",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.80.3"
+  }
 }
