@@ -1,0 +1,29 @@
+{
+  "name": "festival_musica",
+  "version": "1.0.0",
+  "description": "A project that creates a web platform promoting a music festival, including artist information, schedules, and ticket sales.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "Gulp",
+    "CSS3",
+    "JavaScript",
+    "AJAX",
+    "PHP",
+    "MySQL",
+    "Responsive",
+    "Design",
+    "Web",
+    "Development",
+    "Front",
+    "End",
+    "Back",
+    "End"
+  ],
+  "author": "Oscar Vega V.",
+  "license": "ISC"
+}
