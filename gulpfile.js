@@ -4,6 +4,8 @@ import gulpSass from 'gulp-sass' // Import the Gulp plugin to compile Sass files
 
 const sass = gulpSass(darrSass) // Use 'gulp-sass' and pass the Dart Sass implementation
 
+// Compiling Sass files from the 'src/scss' directory and outputting the result as CSS to the 'build/css' directory
+
 export function css(done) {
   src('src/scss/app.scss')//where locate is
     .pipe( sass())// copiled sass
