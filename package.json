@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch src/scss:build/css",
-    "GreetigWithGulp": "gulp gulpGreetig"
+    "css": "gulp css"
   },
   "keywords": [
     "SASS",
@@ -29,6 +29,7 @@
   "author": "Oscar Vega V.",
   "license": "ISC",
   "devDependencies": {
+    "gulp-sass": "^5.1.0",
     "sass": "^1.80.3"
   },
   "dependencies": {
