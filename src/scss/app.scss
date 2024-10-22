@@ -1,5 +1,6 @@
 // Importing the variables defined in _variables.scss
 @use 'base/variables' as var;
+@use 'base/normalize';
 
 body {
   font-family: var.$main_font;        // Using the main font variable
