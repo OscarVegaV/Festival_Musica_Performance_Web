@@ -2,9 +2,11 @@
   "name": "festival_musica",
   "version": "1.0.0",
   "description": "A project that creates a web platform promoting a music festival, including artist information, schedules, and ticket sales.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/scss:build/css"
+    "sass": "sass --watch src/scss:build/css",
+    "GreetigWithGulp": "gulp gulpGreetig"
   },
   "keywords": [
     "SASS",
@@ -28,5 +30,9 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.80.3"
+  },
+  "dependencies": {
+    "gulp": "^5.0.0",
+    "save-dev": "^0.0.1-security"
   }
 }
