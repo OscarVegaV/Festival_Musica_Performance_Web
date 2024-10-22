@@ -1,10 +1,4 @@
-// Importing the variables defined in _variables.scss
-@use 'base/variables' as var;
-@use 'base/normalize';
+// Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
 
-body {
-  font-family: var.$main_font;        // Using the main font variable
-  font-optical-sizing: auto;
-  font-style: normal;  
-  color: var.$black;                  // Using the black color variable
-}
+@forward 'base'; // Forward all styles from base/normalize
+

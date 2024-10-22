@@ -1,0 +1,9 @@
+// Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
+@use 'variables' as var; // Import variables from the base/variables file
+
+body {
+  font-family: var.$main_font; // Using the main font variable
+  font-optical-sizing: auto; // Allow automatic font optical sizing
+  font-style: normal; // Set the font style to normal
+  color: var.$black; // Using the black color variable
+}
