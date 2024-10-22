@@ -1,7 +1,9 @@
-$main_font : "Montserrat", sans-serif;
+// Importing the variables defined in _variables.scss
+@use 'base/variables' as var;
 
 body {
-  font-family: $main_font;
+  font-family: var.$main_font;        // Using the main font variable
   font-optical-sizing: auto;
   font-style: normal;  
+  color: var.$black;                  // Using the black color variable
 }
