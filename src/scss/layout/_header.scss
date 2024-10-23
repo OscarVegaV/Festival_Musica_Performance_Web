@@ -9,15 +9,30 @@
   // Set the background color of the header using a variable
   background-color: var.$green;
 
-  //including mixins
+  // Include responsive mixins for different breakpoints
   @include mix.phone {
+    color: white;
+    width: 10px;
+    height: 1px;    
+}
+  @include mix.tablet {
       color: white;
       width: 10px;
-      height: 1px;
-    
+      height: 1px;    
+  }
+  @include mix.desktop {
+    color: white;
+    width: 10px;
+    height: 1px;    
+}
+  @include mix.desktopXL {
+      color: white;
+      width: 10px;
+      height: 1px;    
   }
 
-  // Nesting styles for header container
+
+  // Nesting styles for the header container
   .header-container {
     padding: 2rem; // Add padding around the container
     display: flex; // Use flexbox for layout
@@ -34,8 +49,8 @@
 
 // Styles for the main navigation
 .main-nav {
-  display: flex;
-  gap: 2rem;
+  display: flex; // Use flexbox for the navigation
+  gap: 2rem; // Space between navigation items
 
   a {
     color: var.$white; // Set the link color using a variable

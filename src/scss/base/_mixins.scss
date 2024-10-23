@@ -1,5 +1,29 @@
+@use 'variables' as var;
+
+// Mixin for phone breakpoint
 @mixin phone {
-  @media (min-width: 768px) {
-    @content;
+  @media (min-width: var.$phone) {
+    @content; // Insert styles here for phone view
+  }
+}
+
+// Mixin for tablet breakpoint
+@mixin tablet {
+  @media (min-width: var.$tablet) {
+    @content; // Insert styles here for tablet view
+  }
+}
+
+// Mixin for desktop breakpoint
+@mixin desktop {
+  @media (min-width: var.$desktop) {
+    @content; // Insert styles here for desktop view
+  }
+}
+
+// Mixin for extra large desktop breakpoint
+@mixin desktopXL {
+  @media (min-width: var.$desktopXL) {
+    @content; // Insert styles here for extra large desktop view
   }
 }
