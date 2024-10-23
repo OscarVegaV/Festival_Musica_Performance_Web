@@ -9,40 +9,27 @@
   // Set the background color of the header using a variable
   background-color: var.$green;
 
-  // Include responsive mixins for different breakpoints
-  @include mix.phone {
-    color: white;
-    width: 10px;
-    height: 1px;    
-}
-  @include mix.tablet {
-      color: white;
-      width: 10px;
-      height: 1px;    
-  }
-  @include mix.desktop {
-    color: white;
-    width: 10px;
-    height: 1px;    
-}
-  @include mix.desktopXL {
-      color: white;
-      width: 10px;
-      height: 1px;    
-  }
-
-
   // Nesting styles for the header container
   .header-container {
     padding: 2rem; // Add padding around the container
-    display: flex; // Use flexbox for layout
-    justify-content: space-between; // Space out children evenly
-    align-items: center; // Align items vertically center
+
+      // Include responsive mixins for different breakpoints
+    @include mix.tablet {
+      display: flex; // Use flexbox for layout
+      justify-content: space-between; // Space out children evenly
+      align-items: center; // Align items vertically center      
+    }
   }
 
   h1 {
     color: var.$white; // Set the color of the heading using a variable
-    margin: 0; // Remove default margin
+    text-align: center;
+    // Include responsive mixins for different breakpoints
+    @include mix.tablet{
+      margin: 0; // Remove default margin
+      text-align: left;
+
+    }
   }
 }
 
@@ -51,6 +38,12 @@
 .main-nav {
   display: flex; // Use flexbox for the navigation
   gap: 2rem; // Space between navigation items
+  flex-direction: column;
+  align-items: center;
+  
+  @include mix.tablet{
+    flex-direction: row;
+  }
 
   a {
     color: var.$white; // Set the link color using a variable
