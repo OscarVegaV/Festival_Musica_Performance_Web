@@ -2,38 +2,63 @@
 <html lang="en">
 <head>
     <!-- Set the character encoding for the document -->
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    
     <!-- Ensure proper rendering and touch zooming on mobile devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Link to the compiled CSS file -->
-  <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="build/css/app.css">
 
     <!-- Title of the document -->
-  <title>Festival De Música</title>
+    <title>Festival De Música</title>
 
     <!-- Preconnect to Google Fonts for performance optimization -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Link to the Montserrat font from Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Link to the Montserrat font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="container header-container">
-      <!-- Main heading for the festival -->
-      <h1>Techno & EDM Festival</h1>
+    <!-- Header section starts -->
+    <header class="header">
+        <div class="container header-container">
+            <!-- Main heading for the festival -->
+            <h1>Techno & EDM Festival</h1>
 
-      <nav class="main-nav">
+            <!-- Navigation menu for the festival -->
+            <nav class="main-nav">
+                <!-- Navigation links for key sections -->
+                <a href="#">Lineup</a>
+                <a href="#">Galería</a>
+                <a href="#">Tickets</a>
+            </nav>
+        </div>
+    </header>  
+    <!-- Header section ends -->
 
-        <!-- Navigation links for the main sections of the festival website -->
-        <a href="#">Lineup</a>
-        <a href="#">Galería</a>
-        <a href="#">Tickets</a>
-      </nav>
+    <!-- Video section starts -->
+    <div class="video">
+        <!-- Overlay for the video content -->
+        <div class="overlay">
+            <!-- Container for the video content -->
+            <div class="container video-content">
+                <!-- Secondary heading and event details -->
+                <h2>Techno & EDM Festival</h2>
+                <p>Julio 2026, CDMX, México</p>
+            </div>
+        </div>
 
-    </div>
-  </header>    
-  </h1>
+        <!-- Background video for the festival -->
+        <video autoplay muted loop>
+            <!-- Different formats for better compatibility -->
+            <source src="src/video/dj.mp4" type="video/mp4"/>
+            <source src="src/video/dj.ogv" type="video/ogg"/>
+            <source src="src/video/dj.webm" type="video/webm"/>
+        </video>
+    </div>  
+    <!-- Video section ends -->
+
 </body>
 </html>
