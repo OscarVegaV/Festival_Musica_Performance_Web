@@ -1,0 +1,25 @@
+// Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
+@use 'base/variables' as var; // Import variables from the base/variables file
+
+.header {
+  background-color: var.$green;
+
+  //nesting elements such as:
+  .header-container{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h1 {
+    color: var.$white;
+    margin: 0;
+  }
+}
+
+.main-nav {
+  a {
+    color: var.$white;
+  }
+}
