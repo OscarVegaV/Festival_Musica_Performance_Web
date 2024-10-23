@@ -413,3 +413,12 @@ body > section {
 .main-nav a:hover {
   color: #fdda00;
 }
+
+.video {
+  position: relative;
+}
+.video .overlay {
+  position: absolute;
+  background: linear-gradient(270deg, rgba(117, 47, 151, 0.6), rgba(56.7272727273, 22.7878787879, 73.2121212121, 0.9));
+  inset: 0;
+}

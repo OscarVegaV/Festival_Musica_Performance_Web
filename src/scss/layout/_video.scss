@@ -1,0 +1,36 @@
+// Use @use when you want to access a specific variable from another module.
+// Use @forward when you want to import all styles from a module that doesn't have variables.
+@use 'base/variables' as var; // Import color and font variables from the base variables file
+@use 'base/mixins' as mix;    // Import media query mixins for responsive design
+
+.video {
+  // Position the video container as relative to allow for absolute positioning of overlay elements
+  position: relative;
+
+  .overlay {
+    // Use absolute positioning for the overlay and apply a gradient background
+    position: absolute;
+    background: linear-gradient(
+      270deg,
+      rgba(var.$purple, 60%),   // Use the purple variable with a 60% opacity for the gradient
+      rgba(darken(var.$purple, 20%), 90%) // Darken the purple by 20% for a smoother gradient transition
+    );
+    inset: 0; // Position the overlay to cover the entire video container
+  }
+
+  video {
+    // Styles for the video element go here
+  }
+
+  .video-content {
+    // Nested styles for the content inside the video container, such as headings and paragraphs
+
+    h2 {
+      // Styles for the main heading inside the video content
+    }
+
+    p {
+      // Styles for the paragraph inside the video content
+    }
+  }
+}
