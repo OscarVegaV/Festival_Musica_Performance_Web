@@ -3,9 +3,19 @@
 
 @use 'base/variables' as var; // Import variables from the base/variables file
 
+@use 'base/mixins' as mix;  // Import variables from the 'layout/mixins' file
+
 .header {
   // Set the background color of the header using a variable
   background-color: var.$green;
+
+  //including mixins
+  @include mix.phone {
+      color: white;
+      width: 10px;
+      height: 1px;
+    
+  }
 
   // Nesting styles for header container
   .header-container {
@@ -20,6 +30,7 @@
     margin: 0; // Remove default margin
   }
 }
+
 
 // Styles for the main navigation
 .main-nav {
