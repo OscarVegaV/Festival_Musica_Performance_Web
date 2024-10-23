@@ -385,6 +385,14 @@ body > section {
   margin: 0;
 }
 
+.main-nav {
+  display: flex;
+  gap: 2rem;
+}
 .main-nav a {
   color: #FFFFFF;
+  font-size: 2.4rem;
+}
+.main-nav a:hover {
+  color: #fdda00;
 }

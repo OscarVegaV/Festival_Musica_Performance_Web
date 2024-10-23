@@ -1,6 +1,5 @@
-// Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
+// Use @use when you want to access a specific variable or style from another module.
+// Use @forward when you want to import all styles from a module that doesn't have variables.
 
-@forward 'base'; // Forward all styles from base
-@forward 'layout'; // Forward all styles from base
-
-
+@forward 'base'; // Forward all styles from the base module
+@forward 'layout'; // Forward all styles from the layout module
