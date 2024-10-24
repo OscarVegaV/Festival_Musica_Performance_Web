@@ -2,6 +2,7 @@
 // Use @forward when you want to import all styles from a module that doesn't have variables.
 @use 'base/variables' as var; // Import color and font variables from the base variables file
 @use 'base/mixins' as mix;    // Import media query mixins for responsive design
+@use 'sass:color';
 
 .video {
   // Set relative positioning for containing absolutely positioned elements (like overlay)
@@ -16,7 +17,7 @@
     background: linear-gradient(
       270deg,
       rgba(var.$purple, 60%), /* 60% opacity purple from variables*/
-      rgba(darken(var.$purple, 20%), 90%) /* darken purple for gradient contrast*/
+      rgba(color.adjust(var.$purple, $lightness:-30%), 90%)/* color.adjust and purple for gradient contrast*/ 
     );
     inset: 0; // Cover entire area of parent container
     display: flex;
