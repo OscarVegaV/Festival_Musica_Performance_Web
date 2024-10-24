@@ -4,33 +4,53 @@
 @use 'base/mixins' as mix;    // Import media query mixins for responsive design
 
 .video {
-  // Position the video container as relative to allow for absolute positioning of overlay elements
+  // Set relative positioning for containing absolutely positioned elements (like overlay)
   position: relative;
+  min-height: 50rem;
+  max-height: 70rem;
+  overflow: hidden; // Ensure video doesn't overflow its container
 
   .overlay {
-    // Use absolute positioning for the overlay and apply a gradient background
+    // Absolute positioning with a purple gradient background overlay for visual effect
     position: absolute;
     background: linear-gradient(
       270deg,
-      rgba(var.$purple, 60%),   // Use the purple variable with a 60% opacity for the gradient
-      rgba(darken(var.$purple, 20%), 90%) // Darken the purple by 20% for a smoother gradient transition
+      rgba(var.$purple, 60%), /* 60% opacity purple from variables*/
+      rgba(darken(var.$purple, 20%), 90%) /* darken purple for gradient contrast*/
     );
-    inset: 0; // Position the overlay to cover the entire video container
+    inset: 0; // Cover entire area of parent container
+    display: flex;
+    align-items: center; // Center content vertically
   }
 
   video {
-    // Styles for the video element go here
+    // Ensure video is displayed as a block-level element and scales responsively
+    display: block;
+    width: auto; // Default to auto width for better scaling
+
+    // Full-width video on desktop screens
+    @include mix.desktop {
+      width: 100%;
+    }
   }
 
   .video-content {
-    // Nested styles for the content inside the video container, such as headings and paragraphs
+    // Overlay content such as headings and text, layered above video
+    z-index: 10; // Ensure content appears above the video
 
     h2 {
-      // Styles for the main heading inside the video content
+      // Large, white heading inside the video content
+      color: var.$white;
+      font-size: 7rem;
+      margin: 0; // Remove default margin
     }
 
     p {
-      // Styles for the paragraph inside the video content
+      // Paragraph with a rouse (red) background, white text, and padding
+      background-color: var.$rouse;
+      display: inline-block; // Adjusts paragraph width to its content
+      padding: 1rem 2rem; // Padding for visual spacing
+      color: var.$white;
     }
   }
 }
