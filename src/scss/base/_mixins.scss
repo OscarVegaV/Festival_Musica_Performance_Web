@@ -1,29 +1,36 @@
 @use 'variables' as var;
 
-// Mixin for phone breakpoint
+// Mixin for phone breakpoint (for screens equal to or larger than 480px)
 @mixin phone {
   @media (min-width: var.$phone) {
-    @content; // Insert styles here for phone view
+    @content; // Styles that will apply for phone viewports
   }
 }
 
-// Mixin for tablet breakpoint
+// Mixin for tablet breakpoint (for screens equal to or larger than 768px)
 @mixin tablet {
   @media (min-width: var.$tablet) {
-    @content; // Insert styles here for tablet view
+    @content; // Styles that will apply for tablet viewports
   }
 }
 
-// Mixin for desktop breakpoint
+// Mixin for desktop breakpoint (for screens equal to or larger than 1200px)
 @mixin desktop {
   @media (min-width: var.$desktop) {
-    @content; // Insert styles here for desktop view
+    @content; // Styles that will apply for desktop viewports
   }
 }
 
-// Mixin for extra large desktop breakpoint
+// Mixin for extra large desktop breakpoint (for screens equal to or larger than 1400px)
 @mixin desktopXL {
   @media (min-width: var.$desktopXL) {
-    @content; // Insert styles here for extra large desktop view
+    @content; // Styles that will apply for extra large desktop viewports
   }
+}
+
+// General container mixin with a max width and center alignment
+@mixin container {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
 }

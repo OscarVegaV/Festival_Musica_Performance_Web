@@ -450,3 +450,27 @@ body > section {
   padding: 1rem 2rem;
   color: #FFFFFF;
 }
+
+.about-festival {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .about-festival {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.content-festival {
+  margin-top: 5rem;
+}
+.content-festival h2 {
+  margin-bottom: 2rem;
+}
+.content-festival .schedule {
+  color: #4CB8B3;
+  font-weight: 700;
+}
