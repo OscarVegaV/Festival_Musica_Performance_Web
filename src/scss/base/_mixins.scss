@@ -34,3 +34,10 @@
   max-width: 120rem;
   margin: 0 auto;
 }
+
+// Grid mixin for flexible columns and gap
+@mixin grid($columns: 1, $gap: 5rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr); // Define the number of columns
+  gap: $gap; // Space between the columns
+}

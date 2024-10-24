@@ -7,15 +7,12 @@
   // Applying the container mixin to center and limit the width
   @include mix.container;
   
-    // Applying grid layout for tablet and above
+  // Applying grid layout for tablet and above
   @include mix.tablet {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); // Two equal columns
-    gap: 5rem; // Space between the columns
+    @include mix.grid(2, 5rem); // Creating a grid with 2 columns and a 5rem gap
   }
-
-
 }
+
 .content-festival {
   margin-top: 5rem; // Adding space above the festival content
 
@@ -24,7 +21,7 @@
   }
 
   .schedule {
-    color: var.$green; // Using the green accent color
+    color: var.$green; /// Using the green accent color for the schedule
     font-weight: 700;  // Making the schedule text bold
   }
 }
