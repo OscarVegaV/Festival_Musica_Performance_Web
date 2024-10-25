@@ -6,14 +6,14 @@ const sass = gulpSass(dartSass); // Use 'gulp-sass' and pass Dart Sass
 
 // Compile Sass files from 'src/scss' and output them to 'build/css'
 export function css(done) {
-  src('src/scss/app.scss') // Source location of Sass file
-    .pipe(sass().on('error', sass.logError)) // Compile Sass and log errors
-    .pipe(dest('build/css')); // Output to 'build/css'
+  src('src/scss/app.scss', {sourcemaps: true} ) // Define the source location of the main Sass file
+    .pipe(sass().on('error', sass.logError)) // Compile Sass and log any errors that occur
+    .pipe(dest('build/css', {sourcemaps: true} )); // Output the compiled CSS to 'build/css' and generate sourcemaps
   
-  done(); // Signal that the task is done
+  done(); // Signal that the task is complete
 }
 
-// Watch all Sass files in 'src/scss' for changes and recompile
+// Watch all Sass files in 'src/scss' for changes and recompile them when modified
 export function dev() {
-  watch('src/scss/**/*.scss', css); // Watch all .scss files
+  watch('src/scss/**/*.scss', css); // Monitor all .scss files in the src/scss directory
 }

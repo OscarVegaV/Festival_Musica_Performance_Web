@@ -1,0 +1,15 @@
+@use 'base/variables' as var; // Import variables from base for consistent styling
+@use 'base/mixins' as mix; // Import mixins for reusable styles
+
+
+// Footer styling
+.footer {
+  background-color: var.$rose; // Set footer background color
+  padding: 2rem 0; // Add vertical padding
+
+  p {
+    margin: 0; // Remove default margin for paragraph elements
+    color: var.$white; // Set text color to white
+    text-align: center; // Center-align text within paragraphs
+  }
+}
