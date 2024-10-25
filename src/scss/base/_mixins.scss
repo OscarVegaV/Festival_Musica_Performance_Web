@@ -1,4 +1,4 @@
-@use 'variables' as var;
+@use 'variables' as var; // Importing variables for use in mixins
 
 // Mixin for phone breakpoint (for screens equal to or larger than 480px)
 @mixin phone {
@@ -30,14 +30,20 @@
 
 // General container mixin with a max width and center alignment
 @mixin container {
-  width: 95%;
-  max-width: 120rem;
-  margin: 0 auto;
+  width: 95%; // Sets width to 95% of the container
+  max-width: 120rem; // Limits maximum width to 120rem
+  margin: 0 auto; // Centers the container horizontally
 }
 
 // Grid mixin for flexible columns and gap
 @mixin grid($columns: 1, $gap: 5rem) {
-  display: grid;
+  display: grid;// Sets the display to grid layout
   grid-template-columns: repeat($columns, 1fr); // Define the number of columns
   gap: $gap; // Space between the columns
 }
+
+// Mixin to reset list styles
+@mixin reset-list {
+  margin: 0; // Resets margin to 0
+  padding: 0; // Resets padding to 0
+  list-style: none; // Removes default list styling

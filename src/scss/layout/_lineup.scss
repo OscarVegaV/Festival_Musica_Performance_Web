@@ -1,6 +1,7 @@
 // Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
 @use 'base/variables' as var; // Import variables from base/variables
 @use 'base/mixins' as mix;    // Import mixins from base/mixins
+@use 'sass:color'; // Importing the color module from Sass for color manipulations
 
 // Styling for the lineup section
 .lineup {
@@ -35,13 +36,48 @@
 
 // Stage section styles
 .stage {
-  padding-top: 2rem;
+  padding-top: 2rem; // Adds space above each stage section
 
   // Styling for the name of each stage
   .stage-name {
-    font-size: 3rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
+    font-size: 3rem; // Sets the font size for stage names
+    font-weight: 900; // Sets the font weight to bold
+    text-transform: uppercase; // Transforms text to uppercase
+    text-align: center; // Centers the text
+  }
+}
+
+// Schedule list styling
+.schedule {
+  @include mix.reset-list; // Resets default list styling
+
+  li {
+    padding: 2.5rem; // Adds padding around list items
+    font-weight: 700; // Sets font weight to bold for list items
+    span {
+      font-weight: 400; // Sets font weight to normal for spans inside list items
+    }
+  }
+}
+
+// Background styling for yellow section
+.bg-yellow {
+  background-color: var.$yellow; // Sets background color to yellow from variables
+
+  // Styling for odd list items
+  li:nth-child(odd) {
+    //background-color: lighten(var.$yellow, 5%);
+    background-color: color.adjust(var.$yellow, $lightness: 5%); // Adjusts color lightness by 5%  
+  }
+}
+
+// Background styling for green section
+.bg-green {
+
+  background-color: var.$green; // Sets background color to green from variables
+// Styling for odd list items
+  li:nth-child(odd) {
+    //background-color: lighten(var.$green, 5%);
+    background-color: color.adjust(var.$green, $lightness: 5%);// Adjusts color lightness by 5%    
   }
 }
