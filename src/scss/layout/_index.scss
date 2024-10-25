@@ -1,4 +1,5 @@
 // Forwarding all styles from various sections to be used in the main stylesheet
 @forward 'header'; // Forward styles from the header module in layout
 @forward 'video';  // Forward styles from the video module in layout
-@forward 'festival';  // Forward styles from the video module in layout
+@forward 'festival';  // Forward styles from the Festival module in layout
+@forward 'lineup';  // Forward styles from the lineup module in layout

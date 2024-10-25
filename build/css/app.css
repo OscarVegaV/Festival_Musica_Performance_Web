@@ -474,3 +474,39 @@ body > section {
   color: #4CB8B3;
   font-weight: 700;
 }
+
+.lineup {
+  background-color: #F53756;
+}
+.lineup h3,
+.lineup .day {
+  text-align: center;
+  color: #FFFFFF;
+}
+.lineup .day {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.stages-container {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .stages-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+}
+
+.stage {
+  padding-top: 2rem;
+}
+.stage .stage-name {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}

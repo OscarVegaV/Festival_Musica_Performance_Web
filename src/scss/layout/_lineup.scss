@@ -1,0 +1,47 @@
+// Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
+@use 'base/variables' as var; // Import variables from base/variables
+@use 'base/mixins' as mix;    // Import mixins from base/mixins
+
+// Styling for the lineup section
+.lineup {
+  // Background color from variables
+  background-color: var.$rouse;
+
+  // Headings and days styling
+  h3,
+  .day {
+    // Center text alignment and white color for headings
+    text-align: center;
+    color: var.$white;
+  }
+
+  // Styling for the event day text
+  .day {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+}
+
+// Container for stages
+.stages-container {
+  // Include a general container mixin for layout
+  @include mix.container;
+
+  // Apply grid layout for tablet screens
+  @include mix.tablet {
+    @include mix.grid(2);
+  }
+}
+
+// Stage section styles
+.stage {
+  padding-top: 2rem;
+
+  // Styling for the name of each stage
+  .stage-name {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
