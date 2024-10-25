@@ -1,0 +1,101 @@
+// Use @use when you want to access a specific variable. Use @forward when you want to import all styles from a module that doesn't have variables.
+@use 'base/variables' as var; // Import variables from base/variables
+@use 'base/mixins' as mix;    // Import mixins from base/mixins
+@use 'sass:color'; // Importing the color module from Sass for color manipulations
+
+// Main container for the tickets section with a background color
+.tickets-container {
+  background-color: var.$green;
+
+  // Styling for the section heading
+  h3 {
+    color: var.$white;
+  }
+
+    // Container for ticket options with responsive grid layout
+  .tickets {
+    @include mix.tablet {
+      @include mix.container;
+      @include mix.grid(2); // 2-column grid for tablets and above
+    }
+  }
+}
+
+// Individual pass (ticket) styling
+.pass {
+
+  // Hover effect to scale the pass for emphasis
+  &:hover {
+
+    transition: transform .3s ease-in-out;
+    transform: scale(1.1);
+  }
+    // Style for the name of each pass
+  &-pass {
+    font-size: 3.6rem;
+    font-weight: 900;
+    text-align: center;
+    color: var.$white;
+  }
+
+    // Common styling for header and footer
+  &-header,
+  &-footer {
+    padding: .5rem;
+
+    p {
+      text-align: center;
+      color: var.$white;
+      margin: 0;
+    }
+
+  }
+
+  // Header styling with background color and uppercase text
+  &-header {
+    background-color: var.$rose;
+    p {
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      padding: 1rem 0;
+    }
+  }
+
+  // Body section background and list styling
+  &-body {
+    background-color: var.$white;
+    ul {
+      @include mix.reset-list;
+
+      li {
+        padding: 2rem;
+        border-bottom:  1px solid #e1e1e1 ;        
+  
+      }
+    }
+  }
+
+  // Footer styling with price display and hover effect
+  &-footer {
+    background-color: var.$white;
+    padding: 3rem;
+
+    p {     
+
+      transition: .4s ease-in-out;     
+
+      font-size: 2.8rem;
+      font-weight: 900;
+      background-color: var.$purple;
+      padding: 1rem 0;
+
+      cursor: pointer;
+
+      &:hover {
+        background-color: color.adjust(var.$purple, $lightness: -20%);// Adjusts color lightness by 5%
+      }
+      
+    }
+  }
+  
+}
