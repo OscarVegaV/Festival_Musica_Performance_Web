@@ -1,0 +1,36 @@
+@use 'base/variables' as var; // Import variables from base for consistent styling
+@use 'base/mixins' as mix; // Import mixins for reusable styles
+
+
+.galery {
+
+  @include mix.container;
+
+  &-img {
+        // Set up a responsive grid layout with defined column numbers for different breakpoints
+    @include mix.grid(1, 2rem);
+    
+    @include mix.phone {
+      @include mix.grid(2, 2rem);
+      
+    }
+    
+    @include mix.tablet{
+      @include mix.grid(3, 2rem);
+      
+    }
+
+    @include mix.desktop{
+      @include mix.grid(4, 2rem);
+      
+    }
+
+    img {
+      // Set height and cover image within container without distortion
+      height: 20rem;
+
+      object-fit: cover;// Keeps the aspect ratio of the image, cropping it to fill the container
+    }
+
+  }
+}

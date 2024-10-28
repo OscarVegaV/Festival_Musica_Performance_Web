@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Function to dynamically create an image gallery
 function makeGalery() {
   const amount_img = 16; // Total number of images to display
-  const gallery = document.querySelector('.img-galery'); // Select the gallery container
+  const gallery = document.querySelector('.galery-img'); // Select the gallery container
 
   // Loop through each image and add it to the gallery
   for (let img = 1; img <= amount_img; img++) {
