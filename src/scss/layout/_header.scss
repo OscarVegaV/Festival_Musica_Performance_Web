@@ -9,6 +9,20 @@
   // Set the background color of the header using a variable
   background-color: var.$green;
 
+  @include mix.tablet {
+    &.fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      box-shadow: .1rem .2rem 3rem #333;
+    }
+  }
+
+
+  //remember me
+
+
   // Nesting styles for the header container
   .header-container {
     padding: 2rem; // Add padding around the container

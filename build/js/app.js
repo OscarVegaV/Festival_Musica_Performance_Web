@@ -1,7 +1,24 @@
 // Wait until the entire document is loaded before executing functions
 document.addEventListener('DOMContentLoaded', function () {
+  stickyNavigation();
   makeGalery(); // Call function to create and display the gallery images
 });
+
+//doesn't work
+function stickyNavigation() {
+  const header = document.querySelector('.header')
+  const aboutFestival = document.querySelector('.about-festival')
+
+  ///doesn't work
+  document.addEventListener('scroll', function () {
+    // Check if the bottom of the aboutFestival element is less than 1 pixel from the top of the viewport
+    if (aboutFestival.getBoundingClientRect().bottom < 0) {
+      header.classList.add('fixed')
+    } else {
+      header.classList.remove('fixed')
+    }  
+  })
+}
 
 // Function to dynamically create an image gallery
 function makeGalery() {
