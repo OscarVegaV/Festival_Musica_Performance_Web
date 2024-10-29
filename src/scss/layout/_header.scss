@@ -19,10 +19,6 @@
     }
   }
 
-
-  //remember me
-
-
   // Nesting styles for the header container
   .header-container {
     padding: 2rem; // Add padding around the container
@@ -66,8 +62,10 @@
     //transition: color 0.3s; // Smooth transition for color changes on hover
     font-size: 2.4rem;
 
-    &:hover {
-      color: var.$yellow; // Change color on hover for better UX
-    }
+    // Define hover and active state styling for links
+    &:hover, // When the user hovers over the link
+    &.active { // When the link is marked as active
+    color: var.$yellow; // Change color to yellow for better UX feedback
+}
   }
 }
