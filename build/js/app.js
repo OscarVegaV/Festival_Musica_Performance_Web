@@ -1,23 +1,24 @@
 // Wait until the entire document is loaded before executing functions
 document.addEventListener('DOMContentLoaded', function () {
-  stickyNavigation();
+  stickyNavigation(); // Call the function to manage sticky navigation
   makeGalery(); // Call function to create and display the gallery images
-  highlightLink();
+  highlightLink(); // Call function to highlight the active navigation link
+  scrollNav(); // Call function to enable smooth scrolling for navigation
 
 });
 
-//doesn't work
+// Function to manage sticky navigation on scroll
 function stickyNavigation() {
-  const header = document.querySelector('.header')
-  const aboutFestival = document.querySelector('.about-festival')
+  const header = document.querySelector('.header'); // Select the header element
+  const aboutFestival = document.querySelector('.about-festival'); // Select the festival section
 
-  ///doesn't work
-  document.addEventListener('scroll', function () {
+// Add scroll event listener to manage header positioning
+document.addEventListener('scroll', function () {
     // Check if the bottom of the aboutFestival element is less than 1 pixel from the top of the viewport
     if (aboutFestival.getBoundingClientRect().bottom < 1) {
-      header.classList.add('fixed')
+      header.classList.add('fixed'); // Add 'fixed' class to header for sticky effect
     } else {
-      header.classList.remove('fixed')
+      header.classList.remove('fixed')  // Remove 'fixed' class if not in the desired position
     }  
   })
 }
@@ -54,12 +55,12 @@ function displayImg(img) {
   
   
   // Creating Modal
-  const modal = document.createElement('DIV');
+  const modal = document.createElement('DIV'); // Create a DIV element for the modal
   modal.classList.add('modal');// Add the modal class for styling
   modal.onclick = killModal; // Set up the click event to close the modal
 
-   //button
-   const killModalButton = document.createElement('BUTTON')
+  // Create a close button for the modal
+  const killModalButton = document.createElement('BUTTON'); // Create a BUTTON element
    killModalButton.textContent = 'X'; // Add text 'X' for closing the modal
    killModalButton.classList.add('button-kill') // Add class for button styling
    killModalButton.onclick = killModalButton; // Set up button click event to close modal
@@ -83,14 +84,14 @@ function killModal() {
   const modal = document.querySelector('.modal');// Select the modal element
 
   modal.classList.add('fade-out'); // Add fade-out animation class
-  //
+  //Use setTimeout to wait for the animation to finish before removing the modal
   setTimeout(() => {
     
     modal?.remove();// Remove the modal if it exists
 
     const body = document.querySelector('body');    
     body.classList.remove('overflow-hidden'); // Re-enable background scrolling
-  }, 500);
+  }, 500); // Duration of the fade-out animation
 }
 
 // Function to highlight the current navigation link based on scroll position
@@ -100,8 +101,8 @@ function highlightLink() {
   document.addEventListener ('scroll', function() {
 
     // Select all sections in the document and all navigation links
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.main-nav a');
+    const sections = document.querySelectorAll('section'); // Get all sections
+    const navLinks = document.querySelectorAll('.main-nav a'); // Get all navigation links
 
     let current = ''; // Variable to store the id of the section currently in view
 
@@ -125,10 +126,29 @@ function highlightLink() {
 
       // Add 'active' class to the link that corresponds to the current section in view
       if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active')
+        link.classList.add('active'); // Highlight the active link
       }
     })
 
   })
 
+}
+
+// Function to enable smooth scrolling when clicking on navigation links
+function scrollNav() {
+
+  const navLinks = document.querySelectorAll('.main-nav a'); // Get all navigation links
+
+  // Add click event listener to each link
+  navLinks.forEach(link => { 
+    link.addEventListener('click', e => {
+      e.preventDefault();// Prevent default anchor behavior
+
+      const sectionScroll = e.target.getAttribute('href'); // Get the target section from the href attribute
+      const section = document.querySelector(sectionScroll);  // Select the target section
+
+      section.scrollIntoView({behavior: 'smooth'}); // Smoothly scroll to the target section
+
+    })
+  })
 }
