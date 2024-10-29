@@ -4,10 +4,14 @@ import gulpSass from 'gulp-sass'; // Import Gulp plugin to compile Sass files
 
 const sass = gulpSass(dartSass); // Use 'gulp-sass' and pass Dart Sass
 
-// Define a task to copy JavaScript files from 'src/js' to 'build/js'
+// Import terser dependency for JavaScript minification
+import terser from 'gulp-terser';
+
+// Define a task to copy and minify JavaScript files from 'src/js' to 'build/js'
 export function js(done) {
 
   src( 'src/js/app.js') // Define the source location of the JavaScript file
+    .pipe (terser()) // Minify the JavaScript file using terser
     .pipe ( dest('build/js')) // Output the JavaScript file to 'build/js'
 
   done(); // Signal that the task is complete
@@ -16,7 +20,9 @@ export function js(done) {
 // Compile Sass files from 'src/scss' and output them to 'build/css'
 export function css(done) {
   src('src/scss/app.scss', {sourcemaps: true} ) // Define the source location of the main Sass file
-    .pipe(sass().on('error', sass.logError)) // Compile Sass and log any errors that occur
+    .pipe(sass({
+      outputStyle: 'compressed'  // Set the output style to compressed for smaller file size
+    }).on('error', sass.logError)) // Compile Sass and log any errors that occur
     .pipe(dest('build/css', {sourcemaps: true} )); // Output the compiled CSS to 'build/css' and generate sourcemaps
   
   done(); // Signal that the task is complete
