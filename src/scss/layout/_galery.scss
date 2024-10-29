@@ -11,17 +11,17 @@
     @include mix.grid(1, 2rem);
     
     @include mix.phone {
-      @include mix.grid(2, 2rem);
+      @include mix.grid(2, 2rem); // Adjust grid for phone screens
       
     }
     
     @include mix.tablet{
-      @include mix.grid(3, 2rem);
+      @include mix.grid(3, 2rem);// Adjust grid for tablet screens
       
     }
 
     @include mix.desktop{
-      @include mix.grid(4, 2rem);
+      @include mix.grid(4, 2rem);// Adjust grid for desktop screens
       
     }
 
@@ -32,5 +32,66 @@
       object-fit: cover;// Keeps the aspect ratio of the image, cropping it to fill the container
     }
 
+  }
+}
+
+// Modal Styling
+.modal {
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(var.$black, 0.5); // Semi-transparent black background
+  display: grid;
+  place-items: center;
+
+  
+  img {
+    max-width: 100rem; // Set max-width for modal images
+  }
+
+  //
+  animation: fadeIn ease-in 0.5s;  // Animation on modal open
+
+  //
+  &.fade-out {
+    animation: fadeOut ease-in 0.5s; // Animation on modal close
+  }
+}
+
+// Button Styling for Modal Close Button
+.button-kill{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var.$white;
+  border: none;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+// Fade-in animation for modal opening
+@keyframes fadeIn {
+  0% {
+    opacity: 0; // Modal starts invisible
+  }
+  50% {
+    opacity: 0.5; // Semi-transparent
+  }
+  100% {
+    opacity: 1; // Fully visible
+  }
+}
+
+// Fade-out animation for modal closing
+@keyframes fadeOut {
+  0% {
+    opacity: 1; // Modal starts fully visible
+  }
+  50% {
+    opacity: 0.5; // Semi-transparent
+  }
+  100% {
+    opacity: 0; // Completely invisible
   }
 }

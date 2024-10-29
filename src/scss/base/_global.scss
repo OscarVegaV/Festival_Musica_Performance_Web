@@ -17,6 +17,10 @@ body {
   font-style: normal; // Set the font style to normal
   color: var.$black; // Using the black color variable
   font-size: 2rem;
+    
+  &.overflow-hidden {
+    overflow: hidden;// Prevents scrolling when modal is open
+  }
 }
 p {
     color: var.$black;
