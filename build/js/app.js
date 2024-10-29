@@ -14,7 +14,36 @@ function makeGalery() {
 
     image.src = `src/img/gallery/full/${img}.jpg`; // Set the source path for each image
     image.alt = 'Image Gallery'; // Alt text for accessibility
+
+    // Event handler to display the image in a modal
+    image.onclick = function () {
+      displayImg(img);
+    };
+
     
     gallery.appendChild(image); // Append the image to the gallery container
   }
 };
+
+// ** Function to display the clicked image in a modal **
+function displayImg(img) {
+  
+  // Creating Modal
+  const modal = document.createElement('DIV');
+modal.classList.add('modal');// Add the modal class for styling
+modal.onclick = killModal; // Set up the click event to close the modal
+
+
+  // Add modal to the DOM
+  const body = document.querySelector('body');
+//
+body.appendChild(modal)
+}
+
+// Function to remove the modal from the DOM
+function killModal() {
+  
+  const modal = document.querySelector('.modal');// Select the modal element
+  //
+  modal?.remove();// Remove the modal if it exists
+}
